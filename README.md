@@ -21,7 +21,7 @@ Este projeto é uma API criada com FastAPI para recomendação de produtos basea
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/usuario/recomendacao-produtos.git
+   git clone https://github.com/uranolais/boas-praticas-python-curso01.git
    cd recomendacao-produtos
    ```
 
