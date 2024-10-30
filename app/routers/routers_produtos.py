@@ -110,13 +110,15 @@ def recomendar_produtos(usuario_id: int, preferencias: Preferencias) -> List[Pro
     ]
 
     # Filtrar as recomendações com base nas preferências
-    produtos_recomendados = [
-        p for p in produtos_recomendados if p.categoria in preferencias.categorias
+    produtos_recomendados_categorias = [
+        produto for produto in produtos_recomendados if produto.categoria in preferencias.categorias
     ]  # Preferencias de categorias
-    produtos_recomendados = [
-        p
-        for p in produtos_recomendados
-        if any(tag in preferencias.tags for tag in p.tags)
-    ]  # Preferencias de tags
 
-    return produtos_recomendados
+    produtos_recomendados_filtrados = []
+    for produto in produtos_recomendados_categorias:
+        for tag in produto.tags:
+            if tag in preferencias.tags:
+                produtos_recomendados_filtrados.append(produto)
+                break
+
+    return produtos_recomendados_filtrados
