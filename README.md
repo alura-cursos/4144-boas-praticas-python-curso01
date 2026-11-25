@@ -47,7 +47,7 @@ Este projeto é uma API criada com FastAPI para recomendação de produtos basea
 
 5. **Execute o servidor:**
    ```bash
-   uvicorn app.main:app --reload
+   uvicorn app:app --reload
    ```
 
 6. **Acesse a documentação interativa da API:**
